@@ -1,9 +1,9 @@
-import Home from "./Component/Home/Home";
+import Register from "./Component/Auth/Register";
 
 function App() {
   return (
     <div className="App font-bold">
-        <Home/>
+        <Register />
     </div>
   );
 }
