@@ -25,7 +25,7 @@ export default function Verification() {
           setLoading(false)
         }
     })()
-},[])
+},[token, email])
  
   if (isLoading) {
     return <div className="App">Loading...</div>;
