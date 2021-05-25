@@ -33,6 +33,9 @@ class AuthService {
   async resendToken(email) {
     return await axios.get(API_URL + `/user/verify/${email}`);
   }
+  async verification(email, token) {
+    return await axios.get(API_URL + `/user/verify/${email}/${token}`);
+  }
 
   async getCurrentUser() {
     var response;

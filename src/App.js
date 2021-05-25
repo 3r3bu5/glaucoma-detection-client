@@ -3,6 +3,7 @@ import Login from "./Component/Auth/Login";
 import Register from "./Component/Auth/Register";
 import HomePage from './Component/Home/Home'
 import ResendVerify from './Component/Auth/ResendVerify'
+import Verification from './Component/Auth/Verification'
 import ProtectedRoute from "./Utils/ProtectedRoute";
 import Auth from "./Services/Auth";
 import Profile from "./Component/Dashboard/Profile";
@@ -57,6 +58,9 @@ function App() {
           >
             <Profile setIsAuthenticated={setIsAuthenticated} />
           </ProtectedRoute>
+          <Route path="/verification/:email/:token">
+           <Verification />
+          </Route>
           <Route path="*">
             <div>404 Not found </div>
           </Route>

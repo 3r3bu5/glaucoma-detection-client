@@ -1,12 +1,37 @@
 import logo from '../../Assests/svg/logo.svg'
 import robodoc from '../../Assests/images/robo-doc.png'
 import { Link } from 'react-router-dom'
-import ResendVerify from './Forms/ResendVerify'
+import { useParams } from 'react-router';
+import { useEffect, useState } from 'react';
+import Auth from '../../Services/Auth';
 
-export default function Resend() {
-    return (
+
+export default function Verification() {
+  let { email, token } = useParams();
+  const [isLoading, setLoading] = useState(true);
+  const [message, setMessage] = useState("");
+
+  useEffect(() => {
+    (async () => {
+        try{
+          let resp = await Auth.verification(email,token)
+          setMessage(resp.data.msg);
+          setLoading(false)
+        } catch(err) {
+          setMessage(
+            err.message === 'Request failed with status code 401' ? 'We were unable to find a user for this verification token. Please SignUp!'
+            : err.message === 'Request failed with status code 400' ? 'Your verification link may have expired. Please try to resend verification code to your Email' :
+             "Something went wrong!" )
+          setLoading(false)
+        }
+    })()
+},[])
+ 
+  if (isLoading) {
+    return <div className="App">Loading...</div>;
+}
+  return (
       <>
-     
         <section className='flex flex-col h-screen justify-center overflow-hidden'>
         <div className="flex flex-wrap">
           <div className="lg:pt-16 h-screen w-full lg:w-1/2">
@@ -16,14 +41,13 @@ export default function Resend() {
                   <img className="h-12" src={logo} alt="" width="auto" />
                   </Link>
                   <Link to='/login' className="py-2 px-6 text-xs rounded-l-xl rounded-t-xl bg-moody-blue-500 hover:bg-moody-blue-100 text-gray-50  hover:text-gray-50 font-bold transition duration-200">
-                      Login</Link>
-                      </div>
+                      Login / Resend Email</Link>
+                  </div>
 
               <div>
                 <div className="mb-6 px-3">
-                <h3 className="text-2xl font-bold">Resend verification token</h3>
+                <h3 className="text-3xl font-bold">{message}</h3>
                 </div>
-                <ResendVerify />
               </div>
             </div>
           </div>
