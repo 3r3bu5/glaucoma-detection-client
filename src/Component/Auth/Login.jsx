@@ -1,9 +1,9 @@
 import logo from '../../Assests/svg/logo.svg'
 import robodoc from '../../Assests/images/robo-doc.png'
-import RegisterForm from './Forms/RegisterForm'
-import { Link } from 'react-router-dom'
+import LoginForm from './Forms/LoginForm'
+import { Link, withRouter } from 'react-router-dom'
 
-export default function Login() {
+export default withRouter(function Login(props) {
     return (
       <>
      
@@ -15,16 +15,16 @@ export default function Login() {
                 <Link to='/' className="text-3xl font-bold leading-none" href="/">
                   <img className="h-12" src={logo} alt="" width="auto" />
                   </Link>
-                  <Link to='/login' className="py-2 px-6 text-xs rounded-l-xl rounded-t-xl bg-moody-blue-500 hover:bg-moody-blue-100 text-gray-50  hover:text-gray-50 font-bold transition duration-200" href="/">
-                      Sign In</Link>
+                  <Link to='/register' className="py-2 px-6 text-xs rounded-l-xl rounded-t-xl bg-moody-blue-500 hover:bg-moody-blue-100 text-gray-50  hover:text-gray-50 font-bold transition duration-200">
+                      Register</Link>
                       </div>
 
               <div>
                 <div className="mb-6 px-3">
-                  <span className="text-gray-500">Sign Up</span>
-                  <h3 className="text-2xl font-bold">Create an account</h3>
+                  <span className="text-gray-500">Login</span>
+                  <h3 className="text-2xl font-bold">Account Login</h3>
                 </div>
-                <RegisterForm />
+                <LoginForm setIsAuthenticated={props.setIsAuthenticated} />
               </div>
             </div>
           </div>
@@ -50,4 +50,4 @@ export default function Login() {
       </section>
       </>
     )
-}
+})

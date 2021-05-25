@@ -6,6 +6,7 @@ import HowToUse from './HowToUse'
 import Team from './Team'
 
 export default function Home() {
+
     return (
       <>
       <MainNavBar/>

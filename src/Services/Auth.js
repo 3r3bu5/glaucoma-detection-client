@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = 'http://localhost:5000'
+const API_URL = process.env.REACT_APP_API_URL
 
 class AuthService {
   login(email, password) {
@@ -13,7 +13,6 @@ class AuthService {
         if (response.data.token) {
           localStorage.setItem("user", JSON.stringify(response.data));
         }
-
         return response.data;
       });
   }
@@ -31,8 +30,23 @@ class AuthService {
     });
   }
 
-  getCurrentUser() {
-    return JSON.parse(localStorage.getItem('user'));;
+  async resendToken(email) {
+    return await axios.get(API_URL + `/user/verify/${email}`);
+  }
+
+  async getCurrentUser() {
+    var response;
+    var lsUser = JSON.parse(localStorage.getItem('user'));
+    if (lsUser) {
+      response =  await axios.post(API_URL + `/user/check`, { token: lsUser.token});
+      if(response.data.success === true) {
+        return lsUser
+      } else {
+        localStorage.clear();
+        return false;
+      }
+    } 
+    return false;
   }
 }
 

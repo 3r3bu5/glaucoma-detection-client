@@ -1,6 +1,7 @@
 import greenDarkUp from '../../Assests/svg/green-dark-up.svg'
 import greenDarkDown from '../../Assests/svg/wing-green-down.svg'
 import bullets from '../../Assests/svg/bullets-gray-left.svg'
+import { Link } from 'react-router-dom'
 
 export default function Header() {
     return (
@@ -20,10 +21,13 @@ export default function Header() {
                   <div className="max-w-sm mx-auto lg:mx-0">
                     <p className="mb-6 text-gray-400 leading-loose">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque efficitur nisl sodales egestas lobortis.</p>
                     <div>
-                      <a className="inline-block mb-3 lg:mb-0 lg:mr-3 w-full lg:w-auto py-2 px-6 leading-loose bg-moody-blue-600 hover:bg-moody-blue-700 text-white font-semibold rounded-l-xl rounded-t-xl transition duration-200" href="#/">
+                      <Link to='/register'>
+                      <a className="inline-block mb-3 lg:mb-0 lg:mr-3 w-full lg:w-auto py-2 px-6 leading-loose bg-moody-blue-600 hover:bg-moody-blue-700 hover:text-white text-white font-semibold rounded-l-xl rounded-t-xl transition duration-200" href="#/">
                         Get 2 FREE scans</a>
-                      <a className="inline-block w-full lg:w-auto py-2 px-6 leading-loose font-semibold bg-white hover:bg-gray-50 rounded-l-xl rounded-t-xl transition duration-200" href="#/">
-                      Login</a></div>
+                      </Link>
+
+                      <Link to='/login' className="inline-block w-full lg:w-auto py-2 px-6 leading-loose font-semibold bg-white text-gray-500 hover:text-gray-700  hover:bg-gray-50 rounded-l-xl rounded-t-xl transition duration-200" href="#/">
+                      Login</Link></div>
                   </div>
                 </div>
               </div>

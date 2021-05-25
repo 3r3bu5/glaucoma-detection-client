@@ -1,7 +1,7 @@
 
 export default function HowToUse() {
     return (
-        <section>
+        <section id='hiw'>
   <div className="py-20 bg-gray-50 radius-for-skewed">
     <div className="container mx-auto px-4">
       <div className="mb-16 max-w-md mx-auto text-center">

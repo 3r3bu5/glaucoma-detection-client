@@ -18,8 +18,16 @@ module.exports = {
           "moody-blue-600": "#2C3396",
           "moody-blue-700": "#242975",
           "moody-blue-800": "#1C1F55",
-          "moody-blue-900": "#131536"
-        },    
+          "moody-blue-900": "#131536",
+          "lo" : "#ed64a6"
+        }, 
+        height: {
+          "95-px": "95px",
+          "70-px": "70px",
+          "350-px": "350px",
+          "500-px": "500px",
+          "600-px": "600px",
+        },   
        },
      },
      variants: {
