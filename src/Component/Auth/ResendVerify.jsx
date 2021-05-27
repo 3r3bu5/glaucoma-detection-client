@@ -30,9 +30,8 @@ export default function Resend() {
           <div className="hidden lg:block h-full relative w-full lg:w-1/2 bg-moody-blue-600">
           <img className="lg:max-w-2xl absolute left-28 top-48 mx-auto" src={robodoc} alt="" />
             <div className="absolute bottom-20 inset-x-0 mx-auto mb-12 max-w-xl text-center" style={{"z-index": "10"}}>
-              <h2 className="mb-2 text-2xl text-white font-black">Lorem ipusm</h2>
+              <h2 className="mb-2 text-2xl text-white font-black">Resend verfication token!</h2>
               <div className="max-w-lg mx-auto">
-                <p className="mb-6 text-gray-50 leading-loose">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque efficitur nisl sodales egestas lobortis.</p>
               </div>
             </div>
           </div>

@@ -19,7 +19,7 @@ export default function Header() {
                     </h2>
                   </div>
                   <div className="max-w-sm mx-auto lg:mx-0">
-                    <p className="mb-6 text-gray-400 leading-loose">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque efficitur nisl sodales egestas lobortis.</p>
+                    <p className="mb-6 text-gray-400 leading-loose">a Pay as you go machine learning as a service system to help detecting glaucoma disease at its first stages</p>
                     <div>
                       <Link to='/register'>
                       <a className="inline-block mb-3 lg:mb-0 lg:mr-3 w-full lg:w-auto py-2 px-6 leading-loose bg-moody-blue-600 hover:bg-moody-blue-700 hover:text-white text-white font-semibold rounded-l-xl rounded-t-xl transition duration-200" href="#/">
