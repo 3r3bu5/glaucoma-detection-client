@@ -57,7 +57,7 @@ export default withRouter(function LoginForm({setCredits, location}) {
             message: `Result: ${response.data.result === 0 ? 'Non-Glaucoma' : 'Glaucoma' }`,
             duration:3,
             description:
-              'Patient record created successfully you can go back or create another patient record',
+              'Retina image scan successfully',
             icon: response.data.result === 0 ?  <CheckCircleTwoTone twoToneColor="#52c41a" />   : <ExclamationOutlined twoToneColor="#eb2f96" />
             ,
           });
